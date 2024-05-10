@@ -231,13 +231,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // Call the function initially
   closeDropdownAfterTimeout();
 
-  // Reset the timeout whenever the dropdown button is clicked
   dropdownButton.addEventListener('click', function () {
       clearTimeout(autoCloseTimeout); // Clear the previous timeout
       closeDropdownAfterTimeout(); // Set a new timeout
   });
 
-  // Retrieve and apply the selected background image from localStorage on page load
   const selectedBgImage = localStorage.getItem('selectedBgImage');
   if (selectedBgImage) {
       document.body.style.backgroundImage = `url(${selectedBgImage})`;
